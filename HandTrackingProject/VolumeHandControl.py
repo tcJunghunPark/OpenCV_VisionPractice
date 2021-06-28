@@ -29,8 +29,8 @@ volRange = volume.GetVolumeRange()
 #volume.SetMasterVolumeLevel(-5.0, None)
 minVol = volRange[0]
 maxVol = volRange[1]
-vol = volume.GetMasterVolumeLevel()
-volBar = volume.GetMasterVolumeLevel()
+vol = 0
+volBar = 0
 volPer = 0
 print(vol)
 while True:
@@ -51,11 +51,11 @@ while True:
         length = math.hypot(x2-x1, y2-y1)
         #print(length)
 
-        #Hand range 50 ~ 300
+        #Hand range 50 ~ 200
         #Volume range -65 ~ 0
-        vol = np.interp(length,[50,300], [minVol, maxVol])
-        volBar = np.interp(length,[50,300], [400, 150])
-        volPer = np.interp(length,[50,300], [0, 100])
+        vol = np.interp(length,[50,200], [minVol, maxVol])
+        volBar = np.interp(length,[50,200], [400, 150])
+        volPer = np.interp(length,[50,200], [0, 100])
         print(vol)
         volume.SetMasterVolumeLevel(vol, None)
 
